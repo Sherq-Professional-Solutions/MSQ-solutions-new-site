@@ -1,0 +1,21 @@
+# MSQ Solutions — uploads folder
+# Images only: never let anything here execute as code.
+
+# No directory listings
+Options -Indexes
+
+# Block script execution (Apache 2.4)
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps|phar|cgi|pl|py|sh|asp|aspx|jsp)$">
+  Require all denied
+</FilesMatch>
+
+# Registry JSON is internal — not publicly readable
+<Files "images.json">
+  Require all denied
+</Files>
+
+# Serve SVGs as inert files (extra hardening alongside admin-side sanitising)
+<FilesMatch "\.svg$">
+  Header set Content-Security-Policy "default-src 'none'"
+  Header set X-Content-Type-Options "nosniff"
+</FilesMatch>

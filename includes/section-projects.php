@@ -10,7 +10,11 @@
       <!-- ***** Project 1 ***** -->
       <div class="blog-post-thumb" data-reveal>
         <div class="p-thumb t1">
+          <?php if ($msq_img = msq_image('project_ewsc')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Eswatini Water Services Corporation customer mobile application" class="p-thumb-img">
+          <?php else: ?>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <?php endif; ?>
         </div>
         <div class="blog-content">
           <h3><span>Eswatini Water Services Corporation</span>Customer Mobile Application</h3>
@@ -27,7 +31,11 @@
       <!-- ***** Project 2 ***** -->
       <div class="blog-post-thumb d1" data-reveal>
         <div class="p-thumb t2">
+          <?php if ($msq_img = msq_image('project_gov')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Government of Eswatini performance management system" class="p-thumb-img">
+          <?php else: ?>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10"/><path d="M9 21V10"/><path d="M15 21V10"/><path d="M19 21V10"/><path d="M3 10l9-6 9 6"/></svg>
+          <?php endif; ?>
         </div>
         <div class="blog-content">
           <h3><span>Government of Eswatini</span>Performance Management System</h3>
@@ -43,7 +51,11 @@
       <!-- ***** Project 3 ***** -->
       <div class="blog-post-thumb d2" data-reveal>
         <div class="p-thumb t3">
+          <?php if ($msq_img = msq_image('project_eric')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Eswatini Royal Insurance Corporation enterprise mobile application" class="p-thumb-img">
+          <?php else: ?>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <?php endif; ?>
         </div>
         <div class="blog-content">
           <h3><span>Eswatini Royal Insurance Corporation</span>Enterprise Mobile Application</h3>
@@ -61,7 +73,11 @@
       <!-- ***** Project 4 ***** -->
       <div class="blog-post-thumb d3" data-reveal>
         <div class="p-thumb t4">
+          <?php if ($msq_img = msq_image('project_pspf')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Public Service Pension Fund member mobile application" class="p-thumb-img">
+          <?php else: ?>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="3"/><path d="M16 12h4"/><path d="M2 10h20"/></svg>
+          <?php endif; ?>
         </div>
         <div class="blog-content">
           <h3><span>Public Service Pension Fund</span>Member Mobile Application</h3>

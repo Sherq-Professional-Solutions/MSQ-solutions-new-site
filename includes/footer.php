@@ -1,16 +1,21 @@
-<?php require_once __DIR__ . '/config.php'; ?>
+<?php
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/images.php';
+?>
 <!-- ***** Footer Start ***** -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.php" class="logo" aria-label="<?php echo SITE_NAME; ?> — home">
-    <img src="assets/images/msq-removebg-preview.png" alt="<?php echo SITE_NAME; ?> logo" class="logo-img">
-    <span class="logo-text">
-        <?php echo SITE_NAME; ?>
-        <small><?php echo SITE_TAGLINE; ?></small>
-    </span>
-</a>
+          <?php $msq_logo = msq_image('site_logo'); ?>
+          <?php if ($msq_logo): ?>
+          <img src="<?php echo $msq_logo; ?>" alt="<?php echo SITE_NAME; ?> logo" class="logo-img">
+          <?php else: ?>
+          <span class="logo-mark"><span>MSQ</span></span>
+          <?php endif; ?>
+          <span class="logo-text" style="color:#fff">MSQ Solutions<small style="color:#e2585e">Technology Partner</small></span>
+        </a>
         <p>MSQ Solutions is a technology development and planning partner for your organisation, specialising in digitalisation and automation of processes. A 100% Black Swazi-owned company based in Manzini, Eswatini — because you can't improve what you don't measure.</p>
         <ul class="social">
           <li><a href="<?php echo SITE_LINKEDIN; ?>" target="_blank" rel="noopener" aria-label="MSQ Solutions on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li>
@@ -49,7 +54,7 @@
 </footer>
 <!-- ***** Footer End ***** -->
 
-<script src="assets/js/main.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/main.js"></script>
 
 </body>
 </html>

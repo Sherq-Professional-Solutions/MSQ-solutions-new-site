@@ -4,6 +4,7 @@
  * Pages set $page_title / $page_desc before including this file.
  */
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/images.php';
 
 $current_page = basename($_SERVER['SCRIPT_NAME']);
 $nav_items = array(
@@ -24,7 +25,12 @@ $page_desc  = isset($page_desc) ? $page_desc : SITE_DESCRIPTION;
   <meta name="description" content="<?php echo htmlspecialchars($page_desc, ENT_QUOTES); ?>">
   <meta name="author" content="<?php echo SITE_NAME; ?>">
   <title><?php echo htmlspecialchars($page_title, ENT_QUOTES); ?> | <?php echo SITE_NAME; ?> — <?php echo SITE_TAGLINE; ?>, Eswatini</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%232563eb'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial'%20font-size='28'%20font-weight='900'%20fill='white'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <?php $msq_favicon = msq_image('favicon'); ?>
+  <?php if ($msq_favicon): ?>
+  <link rel="icon" href="<?php echo $msq_favicon; ?>">
+  <?php else: ?>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23c9292e'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial'%20font-size='28'%20font-weight='900'%20fill='white'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <?php endif; ?>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -33,7 +39,7 @@ $page_desc  = isset($page_desc) ? $page_desc : SITE_DESCRIPTION;
   Layout skeleton based on the "Softy Pinko" structure (templatemo tm-535),
   rebuilt with MSQ Solutions branding & content as a multi-page PHP site.
   -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css">
 </head>
 <body>
 
@@ -52,13 +58,16 @@ $page_desc  = isset($page_desc) ? $page_desc : SITE_DESCRIPTION;
   <div class="container">
     <div class="header-inner">
       <nav class="main-nav">
+        <!-- ***** Logo Start ***** -->
         <a href="index.php" class="logo" aria-label="<?php echo SITE_NAME; ?> — home">
-    <img src="assets/images/msq-removebg-preview.png" alt="<?php echo SITE_NAME; ?> logo" class="logo-img">
-    <span class="logo-text">
-        <?php echo SITE_NAME; ?>
-        <small><?php echo SITE_TAGLINE; ?></small>
-    </span>
-</a>
+          <?php $msq_logo = msq_image('site_logo'); ?>
+          <?php if ($msq_logo): ?>
+          <img src="<?php echo $msq_logo; ?>" alt="<?php echo SITE_NAME; ?> logo" class="logo-img">
+          <?php else: ?>
+          <span class="logo-mark"><span>MSQ</span></span>
+          <?php endif; ?>
+          <span class="logo-text"><?php echo SITE_NAME; ?><small><?php echo SITE_TAGLINE; ?></small></span>
+        </a>
         <!-- ***** Logo End ***** -->
         <!-- ***** Menu Start ***** -->
         <ul class="nav" id="navMenu">

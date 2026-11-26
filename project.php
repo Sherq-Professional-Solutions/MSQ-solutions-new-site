@@ -30,28 +30,44 @@ include __DIR__ . '/includes/header.php';
     <div class="client-grid">
       <!-- ***** Client Item 1 ***** -->
       <div class="client-card" data-reveal>
-        <div class="client-mono">EWSC</div>
+        <div class="client-mono">
+          <?php if ($msq_img = msq_image('client_ewsc')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Eswatini Water Services Corporation logo">
+          <?php else: ?>EWSC<?php endif; ?>
+        </div>
         <h5>Eswatini Water Services Corporation</h5>
         <span class="client-tag">Water &amp; Utilities</span>
         <p>Mobile application for customer bills, service applications and anonymous issue reporting.</p>
       </div>
       <!-- ***** Client Item 2 ***** -->
       <div class="client-card d1" data-reveal>
-        <div class="client-mono">GOV</div>
+        <div class="client-mono">
+          <?php if ($msq_img = msq_image('client_gov')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Government of Eswatini logo">
+          <?php else: ?>GOV<?php endif; ?>
+        </div>
         <h5>Government of Eswatini</h5>
         <span class="client-tag">Public Sector</span>
         <p>National performance management and appraisal system across ministries and departments.</p>
       </div>
       <!-- ***** Client Item 3 ***** -->
       <div class="client-card d2" data-reveal>
-        <div class="client-mono">ERIC</div>
+        <div class="client-mono">
+          <?php if ($msq_img = msq_image('client_eric')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Eswatini Royal Insurance Corporation logo">
+          <?php else: ?>ERIC<?php endif; ?>
+        </div>
         <h5>Eswatini Royal Insurance Corporation</h5>
         <span class="client-tag">Insurance</span>
         <p>Customised performance, project management and procurement platform with HR modules.</p>
       </div>
       <!-- ***** Client Item 4 ***** -->
       <div class="client-card d3" data-reveal>
-        <div class="client-mono">PSPF</div>
+        <div class="client-mono">
+          <?php if ($msq_img = msq_image('client_pspf')): ?>
+          <img src="<?php echo $msq_img; ?>" alt="Public Service Pension Fund logo">
+          <?php else: ?>PSPF<?php endif; ?>
+        </div>
         <h5>Public Service Pension Fund</h5>
         <span class="client-tag">Pensions</span>
         <p>Mobile application putting pension fund services in members' pockets.</p>
